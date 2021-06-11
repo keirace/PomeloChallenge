@@ -14,8 +14,8 @@ exports.jsontransform = (data) => {
                 // find number of children of its parent node
                 let n = Object.keys(data[prev_level][parent_index].children).length;
                 data[prev_level][parent_index].children[n] = item;
-                index++
             }
+            index++
         }
     }
 
