@@ -37,7 +37,6 @@ const start = async () => {
         },
         relativeTo: __dirname,
         path: './views',
-        layoutPath: './views/layouts',
         helpersPath: './views/helpers'
     });
 
@@ -50,14 +49,13 @@ const start = async () => {
     });
 
     server.route({
-        method: 'GET',
+        method: 'POST',
         path: '/jsontransform',
         options: {
             handler: (request, h) => {
                 const payload = request.payload;
-                return jsontransform();
-            },
-            tags: ['api']
+                return jsontransform(payload);
+            }
         }
     });
 
